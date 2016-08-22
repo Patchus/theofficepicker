@@ -8,7 +8,7 @@ the_office_seasons = [{'season':1,'episodes':6,'start_url':70069628},
                       {'season':3,'episodes':25,'start_url':70080635},
                       {'season':4,'episodes':19,'start_url':70108689},
                       {'season':5,'episodes':28,'start_url':70126223},
-                      {'season':6,'episodes':26,'start_url':70151933},
+                      {'season':6,'episodes':26,'start_url':70151942},
                       {'season':7,'episodes':27,'start_url':70189006},
                       {'season':8,'episodes':24,'start_url':70210965},
                       {'season':9,'episodes':25,'start_url':70286845}]
