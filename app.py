@@ -1,3 +1,5 @@
+from flask import Flask, redirect, url_for, request
+app = Flask(__name__)
 import random
 import os
 import webbrowser
@@ -39,9 +41,14 @@ def remove_unwanted(collection,unwanted):
             
     return [x for x in collection if x not in to_remove]
 
+@app.route('/netflix',methods=['GET', 'POST'])
+def hello_world():
+	episodes = create_collection()
+	clean = remove_unwanted(episodes,not_allowed)
+	chosen = clean[random.randrange(len(clean))]
+	url = 'https://www.netflix.com/watch/{}'
+	webbrowser.open_new_tab(url.format(chosen['url']+chosen['episode']-1))
+	return 'Hello World'
+
 if __name__ == '__main__':
-    episodes = create_collection()
-    clean = remove_unwanted(episodes,not_allowed)
-    chosen = clean[random.randrange(len(clean))]
-    url = 'https://www.netflix.com/watch/{}'
-    webbrowser.open_new_tab(url.format(chosen['url']+chosen['episode']-1))
+   app.run()
